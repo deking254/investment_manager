@@ -9,12 +9,18 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ['url', 'username', 'email', 'groups', 'password', 'transactions']
+    def validate(self, data):
+        print(data)
+        return data
 
 
 class InvestmentAccountSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ['url', 'name']
+    def validate(self, data):
+        print(data)
+        return data
 
 class TransactionSerializer(serializers.HyperlinkedModelSerializer):
     user = serializers.HyperlinkedRelatedField(view_name='user-detail', queryset=User.objects.all())
