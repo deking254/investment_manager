@@ -1,5 +1,5 @@
 import pytest
-from django.contrib.auth import User
+from django.contrib.auth.models import User
 from rest_framework.test import APIClient
 # create a user object in investment account 1
 @pytest.fixture
