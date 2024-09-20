@@ -20,6 +20,3 @@ def api_client() -> APIClient:
     Fixture to provide an API client  
     """  
     yield APIClient()
-
-@pytest.fixture
-def transaction_payload(inve
